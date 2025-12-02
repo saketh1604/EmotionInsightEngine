@@ -17,3 +17,8 @@ def add_mood(mood: schemas.MoodCreate, db: Session = Depends(database.get_db)):
 @app.get("/moods")
 def list_moods(db: Session = Depends(database.get_db)):
     return crud.get_moods(db)
+
+@app.get("/moods/streak")
+def get_streak(db: Session = Depends(database.get_db)):
+    streak = crud.get_streak(db)
+    return {"streak_count": streak}

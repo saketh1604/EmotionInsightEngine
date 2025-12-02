@@ -12,3 +12,6 @@ class Mood(BaseModel):
 
     class Config:
         orm_mode = True
+
+class MoodStreak(BaseModel):
+    streak_count: int
